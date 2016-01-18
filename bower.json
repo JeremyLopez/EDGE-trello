@@ -1,0 +1,14 @@
+{
+  "name": "EDGE-trello",
+  "description": "",
+  "main": "",
+  "authors": [
+    "JeremyLopez <jeremyy7@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "angular-trello": "*"
+  }
+}
