@@ -40,17 +40,9 @@ router.post('/diseases', function(req, res, next) {
 
 
 // Not working
-router.delete('/diseases', function(req, res, next) {
-	const id = req.params.id;
+router.delete('/diseases/:id', function(req, res, next) {
+//	const id = req.params.id;
 	console.log(req);
-//	Disease.remove({ _id: req.params.id }, 
-//		function(err, diseases) {
-//			if (err) { 
-//				return next(err); 
-//			}
-//		
-//			res.json(diseases);
-//	});
 });
 
 //router.route('/diseases/:id').delete(function(req, res) {
