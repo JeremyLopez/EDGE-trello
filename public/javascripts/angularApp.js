@@ -7,8 +7,8 @@ app.config([
 	function(TrelloApiProvider, $stateProvider, $urlRouterProvider) {
 		
 		TrelloApiProvider.init({
-			key: '87b220f4687be5f86544b866eef24b3e',
-			secret: 'd6973d41ea27349ff6196e4d93d6858de70a68884e95aa455fe9acfc0163c71b',
+			key: '',
+			secret: '',
 			scopes: {read: true, write: true, account: true},
 			AppName: 'Angular-Trello Test'
 		}),
