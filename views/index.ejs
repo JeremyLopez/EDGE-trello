@@ -1,31 +1,17 @@
 <html>
   <head>
-    <title>My Angular App!</title>
+    <title>EDGE !</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="/bower_components/angular-trello/dist/angular-trello.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src="/javascripts/angularApp.js"></script>
+		<link rel="stylesheet" href="/stylesheets/style.css">
   </head>
 	
   <body ng-app="EDGE-Trello">
 		<ui-view></ui-view>
-		
-		<script type="text/ng-template" id="/home.html">
-			<div class="page-header text-center">
-				<h1>EDGE Statistics</h1>
-			</div>
-			
-			<div ng-repeat="disease in diseases">
-				{{disease}}
-			</div>
-
-			<div ng-repeat="board in boards">
-				{{board.id}}
-			</div>
-
-			<button class="btn btn-success" ng-click="login()">Go Fetch!</button>
-		</script>
   </body>
+	
 </html>

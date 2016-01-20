@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<div class="page-header text-center">
+	<h1>EDGE Statistics</h1>
+</div>
+
+<table class="wrapper text-center">
+	<tr>
+		<td><strong>Tissue Type</strong></td>
+		<td><strong>Complete</strong></td>
+	</tr>
+	<tr ng-repeat="complete in completed track by $index">
+		<td>{{complete[0]}}</td>
+		<td>{{complete[1]}}</td>
+	</tr>
+
+<table class="wrapper text-center">
+	<tr>
+		<td><strong>Tissue Type</strong></td>
+		<td><strong>ChIPed</strong></td>
+		<td><strong>Received</strong></td>
+		<td><strong>Smashed</strong></td>
+	</tr>
+	<tr ng-repeat="board in boards track by $index">
+		<td>{{board[0]}}</td>       <!-- tissue type -->
+		<td>{{board[1][0][1]}}</td> <!-- ChIPed -->
+		<td>{{board[1][1][1]}}</td> <!-- Received -->
+		<td>{{board[1][2][1]}}</td> <!-- Smashed -->
+	</tr>
+</table>
+
+<table class="wrapper text-center">
+	<tr>
+		<td><strong>Cell Line</strong></td>
+		<td><strong>Complete</strong></td>
+	</tr>
+	<tr ng-repeat="cell_line in cell_lines track by $index">
+		<td >
+			{{cell_line[0]}}
+		</td>
+		<td >
+			{{cell_line[1]}}
+		</td>
+	</tr>
+</table>
+
+<button class="btn btn-success" ng-click="login()">Go Fetch!</button>
+<button class="btn btn-warning" ng-click="postToDatabase()">Send to Databse</button>
+	
+<ul ng-repeat="disease in diseases">
+	<li>
+		{{ disease.name }}: {{ disease.chipped }}, 
+												{{ disease.received }}, 
+												{{ disease.smashed }}, 
+												{{ disease.complete }}
+	</li>
+	<button ng-click="removeDisease(disease)"></button>
+</ul>

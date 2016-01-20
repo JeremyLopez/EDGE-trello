@@ -1,8 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
+}
+
+.page-header {
+	padding-bottom: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+.stats {
+	display: inline;
+}
+
+.title {
+	display: inline;
+}
+
+.wrapper {
+	margin: auto;
+/*	margin-left: 20px;*/
+	margin-bottom: 20px;
+}
+
+td {
+	padding-left: 40px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.inline {
+	display: inline;
+}
+
+.btn {
+	margin-left: 30%;
+	width: 43%;
+	margin-bottom: 5px;
+/*	margin-top: 20px;*/
+}
+
+.heading {
+	padding-bottom: 20px;
+}
+
+.main-wrapper {
+	width: 100%;
+	position: absolute;
+	margin: auto;
+}
+
+h1 {
+	margin-bottom: 40px;
 }
