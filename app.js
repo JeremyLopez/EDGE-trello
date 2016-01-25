@@ -5,7 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var logger = require('morgan');
+var mongodb = require('mongodb');
 
 require('./models/Disease');
 var routes = require('./routes/index');
@@ -71,7 +71,12 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
+mongodb://heroku_5ngk7d5h:a4lp92pri9vriu4gku17lju9u2@ds049935.mongolab.com:49935/heroku_5ngk7d5h
 
 
+var uri = 'mongodb://heroku_5ngk7d5h:a4lp92pri9vriu4gku17lju9u2@ds049935.mongolab.com:49935/heroku_5ngk7d5h';
 //mongoose.connect('mongodb://127.0.0.1:27017');
-mongoose.connect('mongodb://localhost/EDGE');
+//mongoose.connect('mongodb://localhost/EDGE');
+mongodb.MongoClient.connect(uri, { server: { auto_reconnect: true } }, function (err, db) {
+    /* adventure! */
+});
