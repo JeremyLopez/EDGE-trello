@@ -5,6 +5,8 @@ var Disease = mongoose.model('Disease');
 //var Comment = mongoose.model('Comment');
 
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -59,7 +61,7 @@ router.delete('/diseases/:id', function(req, res, next) {
 
 
 
-//router.param('disease', function(req, res, next, id) {
+//router.param('get', function(req, res, next, id) {
 //	var query = Disease.findById(id);
 //	
 //	query.exec(function(err, disease) {

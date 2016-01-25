@@ -13,6 +13,7 @@
 		<td>{{complete[0]}}</td>
 		<td>{{complete[1]}}</td>
 	</tr>
+</table>
 
 <table class="wrapper text-center">
 	<tr>
@@ -44,15 +45,29 @@
 	</tr>
 </table>
 
-<button class="btn btn-success" ng-click="login()">Go Fetch!</button>
-<button class="btn btn-warning" ng-click="postToDatabase()">Send to Databse</button>
+<button class="btn btn-success btn-main" ng-click="login()">Go Fetch!</button>
+<button class="btn btn-primary btn-main" ng-click="compareData()">Chart It!</button>
+<!--<button class="btn btn-primary btn-main" ng-click="queryDB()">DB!</button>-->
+<button class="btn btn-danger btn-main" ng-click="postToDatabase()">Send to Databse</button>
+<!--<button class="btn btn-primary btn-main" ng-click="chartMe()">Chart it</button>-->
 	
 <ul ng-repeat="disease in diseases">
-	<li>
+	<li class="inline">
 		{{ disease.name }}: {{ disease.chipped }}, 
 												{{ disease.received }}, 
 												{{ disease.smashed }}, 
-												{{ disease.complete }}
+												{{ disease.complete }},
+												{{ disease.createdAt | date : 'MMM-dd-yyyy' }}
 	</li>
-	<button ng-click="removeDisease(disease)"></button>
+	<li></li>
+	<button class="btn btn-default btn-xs" ng-click="removeDisease(disease)">Delete</button>
 </ul>
+	
+<!--
+<ul ng-repeat="data in totalData">
+	<li>{{data}}</li>
+</ul>
+-->
+
+<div google-chart chart="chartObject1" style="height:500px; width:100%;"></div>
+<div google-chart chart="chartObject2" style="height:500px; width:100%;"></div>
