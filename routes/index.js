@@ -35,7 +35,7 @@ router.post('/diseases', function(req, res, next) {
 
   disease.save(function(err, diseases){
     if(err){ return next(err); }
-
+		console.log(res)
     res.json(diseases);
   });
 });

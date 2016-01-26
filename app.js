@@ -102,16 +102,3 @@ mongoose.connect(uri, function (err, res) {
 		console.log ('Succeeded connected to: ' + uri);
 	}
 });
-
-//mongoose.connect('mongodb://127.0.0.1:27017');
-//mongoose.connect('mongodb://localhost/EDGE');
-//mongodb.MongoClient.connect(uri, function(err, db) { 
-//	if(err) throw err;
-//	
-//	var test = db.collection('tests')
-//	
-//	test.insert(seedData, function(err, result) {
-//		if(err) throw err;
-//		console.log(result);
-//	})
-//});

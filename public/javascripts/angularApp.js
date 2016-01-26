@@ -66,23 +66,28 @@ app.config([
 		.state('home', {
 			url: '/home',
 			templateUrl: '/javascripts/home/_home.html',
-			controller: 'MainCtrl'
-//			resolve: {
-//				diseasePromise: ['diseases', function(diseases){
-//					return diseases.getAll();
-//				}]
+			controller: 'MainCtrl',
+			resolve: {
+				diseasePromise: ['diseases', function(diseases){
+					return diseases.getAll();
+				}]
 //			promiseObj: function($http, diseases){
 //				return $http({method: 'GET', url: '/diseases'})
 //					.then (function (data) {
 //						return diseases.getAll()
 //	        });
-//			}
+			}
 		})
 		
 		.state('disease', {
 			url: '/diseases',
 			templateUrl: '/javascripts/home/_diseases.html',
-			controller: 'MainCtrl'
+			controller: 'MainCtrl',
+			resolve: {
+				diseasePromise: ['diseases', function(diseases){
+					return diseases.getAll();
+				}]
+			}
 		})
 		
 		.state('diseases', {

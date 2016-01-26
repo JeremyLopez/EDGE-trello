@@ -2,6 +2,23 @@
 
 <h1>Diseases</h1>
 
-<div ng-repeat="disease in diseases">
-	{{disease.name}}
-</div>
+<table>
+	<tr>
+		<td><strong>Name</strong></td>
+		<td><strong>ChIPed</strong></td>
+		<td><strong>Received</strong></td>
+		<td><strong>Smashed</strong></td>
+		<td><strong>Complete</strong></td>
+		<td><strong>Server Date</strong></td>
+		<td><strong>Delete</strong></td>
+	</tr>
+	<tr ng-repeat="disease in diseases">
+		<td>{{ disease.name }}</td>
+		<td>{{ disease.chipped }}</td>
+		<td>{{ disease.received }}</td>
+		<td>{{ disease.smashed }}</td>
+		<td>{{ disease.complete }}</td>
+		<td>{{ disease.createdAt | date : 'MMM-dd-yyyy' }}</td>
+		<td><button class="btn btn-default btn-xs" ng-click="removeDisease(disease)">Delete</button></td>
+	</tr>
+</table>
