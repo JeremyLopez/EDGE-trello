@@ -187,7 +187,8 @@ app.controller('MainCtrl', [
 						"568d2c55e72cdb9b54523505": "Cell Lines",
 						"56532fc900b19e6560d5f629": "Ovarian",
 						"56536aa2a71809d4b18a7ea3": 'Pancreatic',
-						"56a13b662aad70e0c0d1f2f9": 'AM-5512 AML PDX'}
+						"56a13b662aad70e0c0d1f2f9": 'AM-5512 AML PDX',
+						"56a77a8748c38fa65e5b9e75": 'Brain-AD and Normal'}
 					]
 					
 					// Remove extraneous cards
