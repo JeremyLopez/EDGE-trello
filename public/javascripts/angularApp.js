@@ -104,29 +104,29 @@ app.controller('MainCtrl', [
 //				$scope.title = totalData[x][1]
 //			}
 			
-			$scope.liver = [
-				{v: totalData[0][0]},
-				{v: totalData[0][1][0][1]},
-				{v: totalData[0][1][1][1]},
-				{v: totalData[0][1][2][1]},
-				{v: totalData[0][1][3][1]}
-			];
-			
-			$scope.ovarian = [
-				{v: totalData[1][0]},
-				{v: totalData[1][1][0][1]},
-				{v: totalData[1][1][1][1]},
-				{v: totalData[1][1][2][1]},
-				{v: totalData[1][1][3][1]}
-			];
-			
-			$scope.pancreatic = [
-				{v: totalData[2][0]},
-				{v: totalData[2][1][0][1]},
-				{v: totalData[2][1][1][1]},
-				{v: totalData[2][1][2][1]},
-				{v: totalData[2][1][3][1]}
-			]
+//			$scope.liver = [
+//				{v: totalData[0][0]},
+//				{v: totalData[0][1][0][1]},
+//				{v: totalData[0][1][1][1]},
+//				{v: totalData[0][1][2][1]},
+//				{v: totalData[0][1][3][1]}
+//			];
+//			
+//			$scope.ovarian = [
+//				{v: totalData[1][0]},
+//				{v: totalData[1][1][0][1]},
+//				{v: totalData[1][1][1][1]},
+//				{v: totalData[1][1][2][1]},
+//				{v: totalData[1][1][3][1]}
+//			];
+//			
+//			$scope.pancreatic = [
+//				{v: totalData[2][0]},
+//				{v: totalData[2][1][0][1]},
+//				{v: totalData[2][1][1][1]},
+//				{v: totalData[2][1][2][1]},
+//				{v: totalData[2][1][3][1]}
+//			]
 			
 //			console.log("...also called");
 			setTimeout($scope.chartMeLine(), 500);
