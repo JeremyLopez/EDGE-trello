@@ -30,7 +30,7 @@ app.config([
 //			resolve: {
 //				diseasePromise: ['diseases', function(diseases){
 //					return diseases.getAll();
-//				}]
+				}//]
 			}
 		})
 		
