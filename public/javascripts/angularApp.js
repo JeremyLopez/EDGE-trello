@@ -1,5 +1,45 @@
 var app = angular.module('EDGE-Trello', ['trello', 'ui.router', 'googlechart']);
 
+app.factory('diseases', [
+	'$http',
+	function($http){
+		
+		var o = {
+			diseases: []
+		};
+		
+		o.show = function(disease) {
+			return $http.get('/diseases/', {id : disease._id})
+				.success(function(data) {
+					console.log(disease.name);
+			});
+		};
+		
+		o.create = function(diseases) {
+			return $http.post('/diseases', diseases).success(function(data){
+				o.diseases.push(data);
+				console.log("created: ", data);
+			});
+		};
+		
+		o.getAll = function() {
+			return $http.get('/diseases').success(function(data){
+				angular.copy(data, o.diseases);
+//				console.log(data);
+			});
+		};
+		
+		o.destroy = function(disease) {
+			return $http.delete('diseases/' + disease._id).success(function(data){
+				console.log("Disease " + disease.name + " has been removed!");
+				o.getAll();
+			});
+		};
+		
+		return o;
+	}
+]);
+
 app.config([
 	'TrelloApiProvider', 
 	'$stateProvider',
@@ -31,8 +71,13 @@ app.config([
 //				diseasePromise: ['diseases', function(diseases){
 //					return diseases.getAll();
 //				}]
-			})
-//		})
+//			promiseObj: function($http, diseases){
+//				return $http({method: 'GET', url: '/diseases'})
+//					.then (function (data) {
+//						return diseases.getAll()
+//	        });
+//			}
+		})
 		
 		.state('disease', {
 			url: '/diseases',
@@ -441,45 +486,5 @@ app.controller('DiseasesCtrl', [
 		
 	}
 ])
-
-app.factory('diseases', [
-	'$http',
-	function($http){
-		
-		var o = {
-			diseases: []
-		};
-		
-		o.show = function(disease) {
-			return $http.get('/diseases/', {id : disease._id})
-				.success(function(data) {
-					console.log(disease.name);
-			});
-		};
-		
-		o.create = function(diseases) {
-			return $http.post('/diseases', diseases).success(function(data){
-				o.diseases.push(data);
-				console.log(data);
-			});
-		};
-		
-		o.getAll = function() {
-			return $http.get('/diseases').success(function(data){
-				angular.copy(data, o.diseases);
-//				console.log(data);
-			});
-		};
-		
-		o.destroy = function(disease) {
-			return $http.delete('diseases/' + disease._id).success(function(data){
-				console.log("Disease " + disease.name + " has been removed!");
-				o.getAll();
-			});
-		};
-		
-		return o;
-	}
-]);
 
 app.controller('ChartCtrl', function($scope) {});

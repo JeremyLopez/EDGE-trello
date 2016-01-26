@@ -71,12 +71,47 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-mongodb://heroku_5ngk7d5h:a4lp92pri9vriu4gku17lju9u2@ds049935.mongolab.com:49935/heroku_5ngk7d5h
+//mongodb://heroku_5ngk7d5h:a4lp92pri9vriu4gku17lju9u2@ds049935.mongolab.com:49935/heroku_5ngk7d5h
 
+//var Disease = mongoose.model('Disease', DiseaseSchema);
+
+//var seedData = {
+//		name: "test",
+//		received : 1,
+//		smashed  : 2,
+//		chipped  : 3,
+//		complete : 4
+//}
+
+//var tester = new Disease(seedData);
+//tester.save(function (err) {if (err) console.log("err: ", err)});
+
+//var uristring =
+//    process.env.MONGOLAB_URI ||
+//    process.env.MONGOHQ_URL ||
+//    'mongodb://localhost/EDGE';
 
 var uri = 'mongodb://heroku_5ngk7d5h:a4lp92pri9vriu4gku17lju9u2@ds049935.mongolab.com:49935/heroku_5ngk7d5h';
+
+console.log("blah");
+
+mongoose.connect(uri, function (err, res) {
+	if (err) {
+		console.log ('ERROR connecting to: ' + uri + '. ' + err);
+	} else {
+		console.log ('Succeeded connected to: ' + uri);
+	}
+});
+
 //mongoose.connect('mongodb://127.0.0.1:27017');
 //mongoose.connect('mongodb://localhost/EDGE');
-mongodb.MongoClient.connect(uri, { server: { auto_reconnect: true } }, function (err, db) {
-    /* adventure! */
-});
+//mongodb.MongoClient.connect(uri, function(err, db) { 
+//	if(err) throw err;
+//	
+//	var test = db.collection('tests')
+//	
+//	test.insert(seedData, function(err, result) {
+//		if(err) throw err;
+//		console.log(result);
+//	})
+//});
