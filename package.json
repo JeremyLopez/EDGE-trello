@@ -15,7 +15,6 @@
     "ejs": "~2.3.3",
     "express-ls-routes": "^1.0.2",
     "grunt-cli": "^0.1.13",
-    "kerberos": "file:kerberos",
     "mongodb": "^2.1.4",
     "mongoose": "^4.3.6",
     "morgan": "^1.6.1",
