@@ -26,11 +26,11 @@ app.config([
 		.state('home', {
 			url: '/home',
 			templateUrl: '/javascripts/home/_home.html',
-			controller: 'MainCtrl',
-			resolve: {
-				diseasePromise: ['diseases', function(diseases){
-					return diseases.getAll();
-				}]
+			controller: 'MainCtrl'
+//			resolve: {
+//				diseasePromise: ['diseases', function(diseases){
+//					return diseases.getAll();
+//				}]
 			}
 		})
 		
