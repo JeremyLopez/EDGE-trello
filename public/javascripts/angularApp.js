@@ -437,6 +437,8 @@ app.controller('MainCtrl', [
 				{label: 'Week', id: 'week', type: "date"}
 			);
 			
+			diseases.diseases.sort(compare)
+			
 			var tissueTypes = [];
 			for ( x=0; x < diseases.diseases.length; x++ ) {
 				if (tissueTypes.indexOf(diseases.diseases[x].name) == -1) {
