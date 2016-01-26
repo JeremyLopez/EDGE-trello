@@ -232,6 +232,7 @@ app.controller('MainCtrl', [
 					var checklistData = {};
 					var newArray = [];
 					var finalData = {}
+					
 					var names = [
 						{"56536a9a07744911b2745928": "Liver",
 						"568d2c55e72cdb9b54523505": "Cell Lines",
@@ -247,6 +248,21 @@ app.controller('MainCtrl', [
 							checklists.push(res[x]);
 						}
 					}
+					
+//					console.log(res);
+//					// Generate names
+//					var names = [];
+//					for ( x=0; x < checklists.length; x++ ) {
+////						console.log(checklists[x].idCard);
+//						var uniqueid = checklists[x].idCard.toString();
+//						console.log(uniqueid);
+//						names.push({
+//							id: uniqueid,
+//							value: checklists[x].name
+//						});
+//					};
+//					
+//					console.log(names);
 					
 					// Generate stats
 					for ( x=0; x < checklists.length; x++ ) {
