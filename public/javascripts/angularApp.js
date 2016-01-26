@@ -374,7 +374,7 @@ app.controller('MainCtrl', [
 				totalPackage.push(serverData[x]);
 			}
 			
-			console.log(totalPackage);
+			console.log("Total Bar: ", totalPackage);
 			chartApiSuccess();
 			
 			// Chart options
@@ -393,13 +393,22 @@ app.controller('MainCtrl', [
 		
 		$scope.chartMeLine = function() {
 			
+			function compare(a,b) {
+				if (a.name < b.name)
+					return -1;
+				else if (a.name > b.name)
+					return 1;
+				else 
+					return 0;
+			}
+			
 			$scope.chartObject2 = {};	
 			var serverComplete = []; // for cols
 			var serverData = [];     // for rows
 			var serverTotal = {};
 			var temp = []
 			
-			console.log("Diseases: ", diseases.diseases);
+//			console.log("Diseases: ", diseases.diseases);
 			
 			init();
 			
@@ -437,14 +446,11 @@ app.controller('MainCtrl', [
 					dates.push(diseases.diseases[x].createdAt)
 				}
 			}
+			console.log("diseases", diseases.diseases);
 			
-//			console.log(dates);
-//			
-//			for ( x=0; x < dates.length; x++ ) {
-//				dates[x] = new Date( dates[x] );
-//			}
-//			
-//			console.log(dates);
+			diseases.diseases.sort(compare)
+			
+			console.log("diseases", diseases.diseases);
 			
 			for ( x=0; x < dates.length; x++ ) {
 				temp = [];
@@ -470,7 +476,7 @@ app.controller('MainCtrl', [
 				totalPackage.push(serverData[x]);
 			}
 			
-			console.log("Total: ", totalPackage);
+			console.log("Total Line: ", totalPackage);
 			chartApiSuccess();
 			
 			function chartApiSuccess(){
