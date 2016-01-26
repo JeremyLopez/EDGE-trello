@@ -30,9 +30,9 @@ app.config([
 //			resolve: {
 //				diseasePromise: ['diseases', function(diseases){
 //					return diseases.getAll();
-				}//]
-			}
-		})
+//				}]
+			})
+//		})
 		
 		.state('disease', {
 			url: '/diseases',
