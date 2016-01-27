@@ -20,10 +20,24 @@ a {
 	display: inline;
 }
 
+.instructions {
+	width: 20%;
+	border: 1px solid black;
+}
+
+.instructions > ol {
+	padding-left: 20px;
+}
+
+.instructions > h3 {
+	margin-top: 10px;
+}
+
 .wrapper {
 	margin: auto;
 /*	margin-left: 20px;*/
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 td {

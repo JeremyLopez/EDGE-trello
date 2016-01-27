@@ -398,7 +398,7 @@ app.controller('MainCtrl', [
 				console.log("Called");
 				$scope.chartObject1.type = 'BarChart';
 				$scope.chartObject1.options = {
-					'title': 'EDGE Statistics',
+					'title': 'EDGE Snapshot',
 					'isStacked': 'true'	
 				}
 				$scope.chartObject1.data = google.visualization.arrayToDataTable(
@@ -499,6 +499,9 @@ app.controller('MainCtrl', [
 			
 			function chartApiSuccess(){
 				$scope.chartObject2.type = 'LineChart';
+				$scope.chartObject2.options = {
+					"title": "ChIP-Seq Completion Over Time"
+				}
 				$scope.chartObject2.data = google.visualization.arrayToDataTable(
 					totalPackage
 				);
