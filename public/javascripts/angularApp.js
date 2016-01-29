@@ -395,6 +395,7 @@ app.controller('MainCtrl', [
 				{id: "complete", label: "Complete", type: "number"}
 			);
 			
+			console.log("total data: ", $scope.totalData);
 			// Generate rows
 			for ( x=0; x < $scope.totalData.length; x++ ) {
 				var temp = [];
