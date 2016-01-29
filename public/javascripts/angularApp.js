@@ -262,7 +262,7 @@ app.controller('MainCtrl', [
 //						});
 //					};
 //					
-//					console.log(names);
+					console.log(checklists);
 					
 					// Generate stats
 					for ( x=0; x < checklists.length; x++ ) {
@@ -276,18 +276,37 @@ app.controller('MainCtrl', [
 						for ( key in checklistData ) {
 							ids.push( key );
 						}
+						
+						// Get recevied for cell lines and tumor as well as complete for cell line
+						if ( currCard == "568d2c55e72cdb9b54523505" ) {
+							var counter = 0;
+//							debugger;
+							for ( y=0; y < checklists[x].checkItems.length; y++ ) {
+								if ( checklists[x].checkItems[y].state == "complete" ){
+									counter++;
+								}
+							}
+							if ( ids.indexOf( currCard ) == -1 ) {
+								checklistData[ currCard ] = {}
+								checklistData[ currCard ][ currCardName ] = [counter, currCardLength];
 
-						// Determine if card in array, if there, skip, if not, add
-						if ( ids.indexOf( currCard ) == -1 ) {
-							checklistData[ currCard ] = {}
-							checklistData[ currCard ][ currCardName ] = currCardLength;
+							} else {
+								checklistData[ currCard ][ currCardName ] = [counter, currCardLength];
+							}
+						} else if ( currCard != "568d2c55e72cdb9b54523505" ) {
+ 
+							// Determine if card in array, if there, skip, if not, add
+							if ( ids.indexOf( currCard ) == -1 ) {
+								checklistData[ currCard ] = {}
+								checklistData[ currCard ][ currCardName ] = currCardLength;
 
-						} else {
-							checklistData[ currCard ][ currCardName ] = currCardLength;
+							} else {
+								checklistData[ currCard ][ currCardName ] = currCardLength;
+							}
 						}
 					}
 					
-					
+					console.log("adawef", checklistData);
 					
 					// Replace id with tissue type
 					for ( key in checklistData ) {
@@ -320,6 +339,7 @@ app.controller('MainCtrl', [
 					$scope.boards = test.sort(); // alphabetize tissue type
 //					console.log("calling: ", callback)
 //					callback($scope.compareData);
+					console.log(finalData);
 					
 				}, function(err){
 						console.log(err);
@@ -339,6 +359,8 @@ app.controller('MainCtrl', [
 						var card = lists[x];
 						cards.push(card);
 					}
+				
+				console.log("cards", cards);
 				
 					// Remove extraneous and create new arr with name and #
 					for ( i=0; i < cards.length; i++ ) {

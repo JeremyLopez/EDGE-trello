@@ -33,6 +33,7 @@
 <table class="wrapper text-center">
 	<tr>
 		<td><strong>Cell Line</strong></td>
+		<td><strong>Receieved</strong></td>
 		<td><strong>Complete</strong></td>
 	</tr>
 	<tr ng-repeat="cell_line in cell_lines track by $index">
@@ -40,7 +41,10 @@
 			{{cell_line[0]}}
 		</td>
 		<td >
-			{{cell_line[1]}}
+			{{cell_line[1][1]}}
+		</td>
+		<td >
+			{{cell_line[1][0]}}
 		</td>
 	</tr>
 </table>
